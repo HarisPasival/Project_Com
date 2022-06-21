@@ -14,6 +14,12 @@ session_start();
 
 <body>
     <div class="container">
+        <div class="text-center mt-4">
+            <h3>สมัครสมาชิก</h3>
+            <p class="text-muted">กรอกแบบฟอร์มด้านล่างเพื่อสมัครเป็นสมาชิกของผู้ใช้ใหม่
+                <hr>
+            </p>
+        </div>
         <div class="row">
             <div class="col mt-4">
                 <?php if (isset($_SESSION['error_fill'])) : ?>
@@ -31,15 +37,12 @@ session_start();
                         <?php echo $_SESSION['error_insert']; ?>
                     </div>
                 <?php endif; ?>
-                <div class="card border-0 shadow">
-                    <div class="card-header text-dark bg-white text-center">
-                        <h3>สมัครสมาชิก</h3>
-                    </div>
+                <div class="card">
                     <div class="card-body">
                         <form class="row g-3" action="Register_db.php" method="POST">
                             <div class="col-md-2">
                                 <label class="form-label">คำนำหน้า :</label>
-                                <input type="text" name="title_ct" class="form-control" />
+                                <input  type="text" name="title_ct" class="form-control"  />
                             </div>
                             <div class="col-md-5">
                                 <label class="form-label">ชื่อ :</label>
@@ -71,6 +74,7 @@ session_start();
                             </div>
                             <div class="mb-3 text-center">
                                 <button type="submit" name="Regis" class="btn btn-primary">สมัครสมาชิก</button>
+                                <a href="Login.php" class="btn btn-danger">ยกเลิก</a>
                             </div>
                         </form>
                     </div>
@@ -85,7 +89,7 @@ session_start();
 
 <?php
 if (isset($_SESSION['error_fill']) || isset($_SESSION['exist_fill']) || isset($_SESSION['error_insert'])) {
-    unset($_SESSION['error_fill']); 
+    unset($_SESSION['error_fill']);
     unset($_SESSION['exist_fill']);
     unset($_SESSION['error_insert']);
 }

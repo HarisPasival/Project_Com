@@ -46,7 +46,7 @@
                             <div class="text-center">
                                 <button type="submit" name="login" class="btn btn-primary btn-block my-3">เข้าสู่ระบบ</button>
                                 <a href="Register.php" class="nav-link">
-                                    <h5>สมัครสมาชิกก่อนเข้าสู่ระบบ</h5>
+                                    <h6>สมัครสมาชิกก่อนเข้าสู่ระบบ!!</h6>
                                 </a>
                             </div>
                         </form>

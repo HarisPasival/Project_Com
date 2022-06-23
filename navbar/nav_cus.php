@@ -7,7 +7,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" href="#">โปรไฟล์</a>
+          <a class="nav-link" href="profile_cus.php">โปรไฟล์</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><?php echo $_SESSION['username_ct']; ?></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="Logout.php">Logout</a>

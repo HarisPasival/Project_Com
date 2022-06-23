@@ -24,7 +24,6 @@ if(!isset($_SESSION['is_login'])){
                 <div class="card mt-5 text-center">
                     <div class="card-body">
                         <h1>ยินดีต้อนรับ</h1>
-                        <h3>คุณ<?php echo $_SESSION['username_ct']; ?></h3>
                     </div>
                 </div>
             </div>

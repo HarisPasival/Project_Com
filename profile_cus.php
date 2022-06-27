@@ -2,10 +2,10 @@
 session_start();
 include('config/conn.php');
 
-if(!isset($_SESSION['is_login'])){
+if (!isset($_SESSION['is_login'])) {
     header("Location: Login.php");
     exit;
-}else{
+} else {
     $select_stmt = $conn->prepare("SELECT * FROM customer WHERE username_ct = :username_ct");
     $select_stmt->bindParam(':username_ct', $_SESSION['username_ct']);
     $select_stmt->execute();
@@ -24,7 +24,7 @@ if(!isset($_SESSION['is_login'])){
 </head>
 
 <body>
-<div class="container">
+    <div class="container">
         <div class="text-center mt-4">
             <h3>ข้อมูลส่วนตัว : <?php echo $_SESSION['username_ct']; ?></h3>
             <p class="text-muted">รายละเอียดของลูกค้า
@@ -35,7 +35,7 @@ if(!isset($_SESSION['is_login'])){
             <div class="col mt-4">
                 <div class="card border-0">
                     <div class="card-body">
-                        <form action="#" method="POST" class="row g-3">
+                        <form action="edit_profile.php" method="POST" class="row g-3">
                             <input type="hidden" name="customer_id" value="<?= $row['customer_id'] ?>">
                             <div class="col-md-2">
                                 <label class="form-label">คำนำหน้า :</label>
@@ -70,7 +70,7 @@ if(!isset($_SESSION['is_login'])){
                                 <input type="text" name="adress_ct" class="form-control" value="<?= $row['adress_ct'] ?>" readonly />
                             </div>
                             <div class="mb-3">
-                                <button type="submit" name="#" class="btn btn-primary">แก้ไขข้อมูล</button>
+                                <button type="submit" name="edit" class="btn btn-primary">แก้ไขข้อมูล</button>
                                 <a href="index_customer.php" class="btn btn-danger">ยกเลิก</a>
                             </div>
                         </form>
@@ -79,19 +79,6 @@ if(!isset($_SESSION['is_login'])){
             </div>
         </div>
     </div>
-    <!-- <div class="container">
-        <div class="row">
-            <div class="col-md-12 mt-2">
-                <h1>โปรไฟล์</h1>
-                <div class="card mt-5">
-                    <div class="card-body">
-                        <h4>รายละเอียด</h4>
-                        <span class="mt-5">Username</span> : <span><?php echo $row['username_ct'];?></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
     <script src="js/bootstrap.min.js"></script>
 </body>
 

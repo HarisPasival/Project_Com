@@ -35,8 +35,7 @@ session_start();
                             <thead class="table-primary">
                                 <tr>
                                     <th>#</th>
-                                    <th>ชื่อ</th>
-                                    <th>นามสกุล</th>
+                                    <th>ชื่อ-นามสกุล</th>
                                     <th>เบอร์โทร</th>
                                     <th>อีเมล</th>
                                     <th>ที่อยู่</th>
@@ -54,8 +53,7 @@ session_start();
                                 ?>
                                     <tr>
                                         <td><?= $i++; ?></td>
-                                        <td><?= $row['name_emp']; ?></td>
-                                        <td><?= $row['surname_emp']; ?></td>
+                                        <td><?= $row['title_emp'].$row['name_emp'].' '.$row['surname_emp']; ?></td>
                                         <td><?= $row['phone_emp']; ?></td>
                                         <td><?= $row['email_emp']; ?></td>
                                         <td><?= $row['adress_emp']; ?></td>

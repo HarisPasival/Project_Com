@@ -59,7 +59,7 @@ session_start();
                                         <td><?= $row['phone_emp']; ?></td>
                                         <td><?= $row['email_emp']; ?></td>
                                         <td><?= $row['adress_emp']; ?></td>
-                                        <td><a href="Edit_emp.php?employee_id=<?= $row['employee_id'] ?>" class="btn btn-primary">แก้ไข</a></td>
+                                        <td><a href="Edit_emp.php?employee_id=<?= $row['employee_id'] ?>" class="btn btn-warning">แก้ไข</a></td>
                                         <td>
                                             <form action="crud.php" method="POST">
                                                 <button type="submit" name="delete_emp" value="<?= $row['employee_id'] ?>" class="btn btn-danger">ลบ</button>

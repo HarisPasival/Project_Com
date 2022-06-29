@@ -58,7 +58,7 @@ session_start();
                                         <td><?= $row['order_quanlity']; ?></td>
                                         <td><?= $row['order_cost']; ?></td>
                                         <td><?= $row['order_date']; ?></td>
-                                        <td><a href="Edit_Ods.php?order_id=<?= $row['order_id'] ?>" class="btn btn-primary">แก้ไข</a></td>
+                                        <td><a href="Edit_Ods.php?order_id=<?= $row['order_id'] ?>" class="btn btn-warning">แก้ไข</a></td>
                                         <td>
                                             <form action="crud.php" method="POST">
                                                 <button type="submit" name="delete_odr" value="<?= $row['order_id'] ?>" class="btn btn-danger">ลบ</button>

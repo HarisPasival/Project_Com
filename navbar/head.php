@@ -14,7 +14,7 @@
             <li><a class="dropdown-item" href="employee_data.php">ข้อมูลพนักงาน</a></li>
             <li><a class="dropdown-item" href="customer_data.php">ข้อมูลลูกค้า</a></li>
             <li><a class="dropdown-item" href="model_data.php">ข้อมูลประเภทอะไหล่</a></li>
-            <li><a class="dropdown-item" href="#">ข้อมูลอะไหล่</a></li>
+            <li><a class="dropdown-item" href="spare_data.php">ข้อมูลอะไหล่</a></li>
           </ul>
         </li>
         <li class="nav-item">

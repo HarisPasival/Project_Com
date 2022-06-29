@@ -191,18 +191,25 @@ if (isset($_POST['delete_odr'])) {
 }
 // ข้อมูลพนักงาน
 if (isset($_POST['save_emp'])) {
+    $title_emp = $_POST['title_emp'];
     $name_emp = $_POST['name_emp'];
     $surname_emp = $_POST['surname_emp'];
+    $username_emp = $_POST['username_emp'];
+    $password_emp = $_POST['password_emp'];
     $phone_emp = $_POST['phone_emp'];
     $email_emp = $_POST['email_emp'];
     $adress_emp = $_POST['adress_emp'];
-
-    $query = "INSERT INTO employee(name_emp,surname_emp,phone_emp,email_emp,adress_emp) VALUES(:name_emp,:surname_emp,:phone_emp,:email_emp,:adress_emp)";
+    
+    $password_emp = password_hash($password_emp, PASSWORD_DEFAULT);
+    $query = "INSERT INTO employee(title_emp,name_emp,surname_emp,username_emp,password_emp, phone_emp,email_emp,adress_emp) VALUES(:title_emp,:name_emp,:surname_emp,:username_emp,:password_emp,:phone_emp,:email_emp,:adress_emp)";
     $query_run = $conn->prepare($query);
 
     $data = [
+        ':title_emp'=> $title_emp,
         ':name_emp' => $name_emp,
         ':surname_emp' => $surname_emp,
+        ':username_emp' => $username_emp,
+        ':password_emp' => $password_emp,
         ':phone_emp' => $phone_emp,
         ':email_emp' => $email_emp,
         ':adress_emp' => $adress_emp
@@ -222,19 +229,26 @@ if (isset($_POST['save_emp'])) {
 
 if (isset($_POST['edit_emp'])) {
     $employee_id = $_POST['employee_id'];
+    $title_emp = $_POST['title_emp'];
     $name_emp = $_POST['name_emp'];
     $surname_emp = $_POST['surname_emp'];
+    $username_emp = $_POST['username_emp'];
+    $password_emp = $_POST['password_emp'];
     $phone_emp = $_POST['phone_emp'];
     $email_emp = $_POST['email_emp'];
     $adress_emp = $_POST['adress_emp'];
 
     try {
-        $query = "UPDATE employee SET name_emp = :name_emp, surname_emp = :surname_emp, phone_emp = :phone_emp, email_emp = :email_emp, adress_emp = :adress_emp WHERE employee_id = :employee_id";
+        $password_emp = password_hash($password_emp, PASSWORD_DEFAULT);
+        $query = "UPDATE employee SET title_emp = :title_emp, name_emp = :name_emp, surname_emp = :surname_emp, username_emp = :username_emp, password_emp = :password_emp , phone_emp = :phone_emp, email_emp = :email_emp, adress_emp = :adress_emp WHERE employee_id = :employee_id";
         $stmt = $conn->prepare($query);
 
         $data = [
+            ':title_emp' => $title_emp,
             ':name_emp' => $name_emp,
             ':surname_emp' => $surname_emp,
+            ':username_emp' => $username_emp,
+            ':password_emp' => $password_emp,
             ':phone_emp' => $phone_emp,
             ':email_emp' => $email_emp,
             ':adress_emp' => $adress_emp,

@@ -16,11 +16,10 @@ include('config/conn.php');
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-md-8 mt-4">
+            <div class="col mt-4">
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-body">
                         <h3>แก้ไขข้อมูลประเภท
-                            <a href="model_data.php" class="btn btn-danger float-end">ย้อนกลับ</a>
                         </h3>
                     </div>
                     <div class="card-body">
@@ -43,6 +42,7 @@ include('config/conn.php');
                             </div>
                             <div class="mb-3">
                                 <button type="submit" name="edit_model" class="btn btn-primary">แก้ไขข้อมูล</button>
+                                <a href="model_data.php" class="btn btn-danger">ย้อนกลับ</a>
                             </div>
                         </form>
 

@@ -20,10 +20,10 @@ if(!isset($_SESSION['is_login'])){
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1 class="mt-5">Home Page</h1>
+                <!-- <h1 class="mt-5">หน้าแรก</h1> -->
                 <div class="card mt-5 text-center">
                     <div class="card-body">
-                        <h1>ยินดีต้อนรับ</h1>
+                        <h1>Hello</h1>
                     </div>
                 </div>
             </div>

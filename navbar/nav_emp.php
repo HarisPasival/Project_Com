@@ -10,7 +10,7 @@
           <a class="nav-link" href="#">โปรไฟล์</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="Logout.php">Logout</a>
+          <a class="nav-link" href="#">Logout</a>
         </li>
       </ul>
     </div>

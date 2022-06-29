@@ -24,15 +24,15 @@ session_start();
                 endif;
                 ?>
                 <div class="card">
-                    <div class="card-header">
-                        <h3>ข้อมูลลูกค้า
-                            <a href="Add_emp.php" class="btn btn-primary float-end">เพิ่มข้อมูล</a>
+                    <div class="card-body">
+                        <h3>ข้อมูลพนักงาน
+                            <a href="Add_emp.php" class="btn btn-primary">+เพิ่มข้อมูล</a>
                         </h3>
                     </div>
                     <div class="card-body">
                     <?php include 'datatable/DataTable.php';?>
                         <table id="example" class="table table-borderless table-hover">
-                            <thead>
+                            <thead class="table-primary">
                                 <tr>
                                     <th>#</th>
                                     <th>ชื่อ</th>

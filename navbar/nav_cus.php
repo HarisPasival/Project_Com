@@ -10,7 +10,7 @@
           <a class="nav-link" href="profile_cus.php">โปรไฟล์</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#"><?php echo $_SESSION['username_ct']; ?></a>
+          <a class="nav-link"><?php echo $_SESSION['username_ct']; ?></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="Logout.php">Logout</a>

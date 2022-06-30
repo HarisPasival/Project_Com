@@ -69,7 +69,7 @@ include('config/conn.php');
 
                             </div>
                             <div class="mb-3">
-                                <button type="submit" name="save_repair" class="btn btn-primary">เพิ่มรายการซ่อม</button>
+                                <button type="submit" name="edit_repair" class="btn btn-primary">เพิ่มรายการซ่อม</button>
                                 <a href="repair.php" class="btn btn-danger">ยกเลิก</a>
                             </div>
                         </form>

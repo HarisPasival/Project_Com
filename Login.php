@@ -48,6 +48,7 @@
                                 <a href="Register.php" class="nav-link">
                                     <h6>สมัครสมาชิกก่อนเข้าสู่ระบบ!!</h6>
                                 </a>
+                                <a href="HomePage.php"><img src="back-arrow.png"></a>
                             </div>
                         </form>
                     </div>

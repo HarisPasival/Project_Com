@@ -44,7 +44,8 @@
                                 <input type="password" name="password_emp" class="form-control" />
                             </div>
                             <div class="text-center">
-                                <button type="submit" name="login_Emp" class="btn btn-primary btn-block my-3">เข้าสู่ระบบ</button>
+                                <button type="submit" name="login_Emp" class="btn btn-primary btn-block my-3">เข้าสู่ระบบ</button><br>
+                                <a href="HomePage.php"><img src="back-arrow.png"></a>
                             </div>
                         </form>
                     </div>

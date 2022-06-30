@@ -33,21 +33,18 @@
                 <?php endif; ?>
                 <div class="card border-0 shadow">
                     <div class="card-body">
-                        <h1 class="card-title text-center">Customer</h1>
-                        <form action="login_db.php" method="POST">
+                        <h1 class="card-title text-center">Employee</h1>
+                        <form action="login_Emp_db.php" method="POST">
                             <div class="col-12 mt-2">
                                 <label class="form-label">ชื่อผู้ใช้ :</label>
-                                <input type="text" name="username_ct" class="form-control" />
+                                <input type="text" name="username_emp" class="form-control" />
                             </div>
                             <div class="col-12 mt-2">
                                 <label class="form-label">รหัสผ่าน :</label>
-                                <input type="password" name="password_ct" class="form-control" />
+                                <input type="password" name="password_emp" class="form-control" />
                             </div>
                             <div class="text-center">
-                                <button type="submit" name="login" class="btn btn-primary btn-block my-3">เข้าสู่ระบบ</button>
-                                <a href="Register.php" class="nav-link">
-                                    <h6>สมัครสมาชิกก่อนเข้าสู่ระบบ!!</h6>
-                                </a>
+                                <button type="submit" name="login_Emp" class="btn btn-primary btn-block my-3">เข้าสู่ระบบ</button>
                             </div>
                         </form>
                     </div>

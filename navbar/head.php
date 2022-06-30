@@ -24,7 +24,10 @@
           <a class="nav-link" href="#">รับเข้าอะไหล่</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Logout</a>
+          <a class="nav-link" href="profile_Am.php">โปรไฟล์</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Logout_Am.php">Logout</a>
         </li>
       </ul>
     </div>

@@ -60,7 +60,7 @@ session_start();
                                         <td><a href="Edit_Cus.php?customer_id=<?= $row['customer_id'] ?>" class="btn btn-warning">แก้ไข</a></td>
                                         <td>
                                             <form action="crud.php" method="POST">
-                                                <button type="submit" name="delete_cus" value="<?= $row['customer_id'] ?>" class="btn btn-danger">ลบ</button>
+                                                <button type="submit" name="delete_cus" value="<?= $row['customer_id'] ?>" onclick="return confirm('คุณต้องการลบหรือไม่');" class="btn btn-danger">ลบ</button>
                                             </form>
                                         </td>
                                     </tr>

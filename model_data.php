@@ -54,7 +54,7 @@ session_start();
                                         <td><a href="Edit_model.php?model_id=<?= $row['model_id'] ?>" class="btn btn-warning">แก้ไข</a></td>
                                         <td>
                                             <form action="crud.php" method="POST">
-                                                <button type="submit" name="delete_model" value="<?= $row['model_id'] ?>" class="btn btn-danger">ลบ</button>
+                                                <button type="submit" name="delete_model" value="<?= $row['model_id'] ?>" onclick="return confirm('คุณต้องการลบหรือไม่');" class="btn btn-danger">ลบ</button>
                                             </form>
                                         </td>
                                     </tr>

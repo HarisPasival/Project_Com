@@ -361,4 +361,84 @@ if (isset($_POST['delete_model'])) {
         echo $e->getMessage();
     }
 }
+
+if (isset($_POST['save_spare'])) {
+    $spare_name = $_POST['spare_name'];
+    $spare_quanlity = $_POST['spare_quanlity'];
+    $spare_cost = $_POST['spare_cost'];
+
+    $query = "INSERT INTO spare(spare_name,spare_quanlity,spare_cost) VALUES(:spare_name,:spare_quanlity,:spare_cost)";
+    $query_run = $conn->prepare($query);
+
+    $data = [
+        ':spare_name' => $spare_name,
+        ':spare_quanlity' => $spare_quanlity,
+        ':spare_cost' => $spare_cost
+    ];
+    $query_execute = $query_run->execute($data);
+
+    if ($query_execute) {
+        $_SESSION['message'] = "เพิ่มข้อมูลสำเร็จ";
+        header('Location: spare_data.php');
+        exit(0);
+    } else {
+        $_SESSION['message'] = "เพิ่มข้อมูลไม่สำเร็จ";
+        header('Location: spare_data.php');
+        exit(0);
+    }
+}
+if (isset($_POST['edit_spare'])) {
+    $spare_id = $_POST['spare_id'];
+    $spare_name = $_POST['spare_name'];
+    $spare_quanlity = $_POST['spare_quanlity'];
+    $spare_cost = $_POST['spare_cost'];
+
+    try {
+        $query = "UPDATE spare SET spare_name = :spare_name, spare_quanlity = :spare_quanlity, spare_cost = :spare_cost WHERE spare_id = :spare_id";
+        $stmt = $conn->prepare($query);
+
+        $data = [
+            ':spare_name' => $spare_name,
+            ':spare_quanlity' => $spare_quanlity,
+            ':spare_cost' => $spare_cost,
+            ':spare_id' => $spare_id
+        ];
+        $query_execute = $stmt->execute($data);
+        if ($query_execute) {
+            $_SESSION['message'] = "แก้ไขข้อมูลสำเร็จ";
+            header('Location: spare_data.php');
+            exit(0);
+        } else {
+            $_SESSION['message'] = "แก้ไขข้อมูลไม่สำเร็จ";
+            header('Location: spare_data.php');
+            exit(0);
+        }
+    } catch (PDOException $e) {
+        echo $e->getMessage();
+    }
+}
+
+if (isset($_POST['delete_spare'])) {
+    $spare_id = $_POST['delete_spare'];
+    try {
+        $query = "DELETE FROM spare WHERE spare_id = :spare_id";
+        $stmt = $conn->prepare($query);
+
+        $data = [
+            ':spare_id' => $spare_id
+        ];
+        $query_execute = $stmt->execute($data);
+        if ($query_execute) {
+            $_SESSION['message'] = "ลบข้อมูลสำเร็จ";
+            header('Location: spare_data.php');
+            exit(0);
+        } else {
+            $_SESSION['message'] = "ลบข้อมูลไม่สำเร็จ";
+            header('Location: spare_data.php');
+            exit(0);
+        }
+    } catch (PDOException $e) {
+        echo $e->getMessage();
+    }
+}
 ?>

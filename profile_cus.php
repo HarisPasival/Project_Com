@@ -32,45 +32,51 @@ if (!isset($_SESSION['is_login'])) {
             </p>
         </div>
         <div class="row">
+            <?php if (isset($_SESSION['message'])) : ?>
+                <h5 class="alert alert-success"><?= $_SESSION['message']; ?></h5>
+            <?php
+                unset($_SESSION['message']);
+            endif;
+            ?>
             <div class="col mt-4">
                 <div class="card border-0">
                     <div class="card-body">
-                        <form action="edit_profile.php" method="POST" class="row g-3">
+                        <form action="editpf_cus.php" method="POST" class="row g-3">
                             <input type="hidden" name="customer_id" value="<?= $row['customer_id'] ?>">
                             <div class="col-md-2">
                                 <label class="form-label">คำนำหน้า :</label>
-                                <input type="text" name="title_ct" class="form-control" value="<?= $row['title_ct'] ?>" readonly />
+                                <input type="text" name="title_ct" class="form-control" value="<?= $row['title_ct'] ?>" />
                             </div>
                             <div class="col-md-5">
                                 <label class="form-label">ชื่อ :</label>
-                                <input type="text" name="name_ct" class="form-control" value="<?= $row['name_ct'] ?>" readonly />
+                                <input type="text" name="name_ct" class="form-control" value="<?= $row['name_ct'] ?>" />
                             </div>
                             <div class="col-md-5">
                                 <label class="form-label">นามสกุล :</label>
-                                <input type="text" name="surname_ct" class="form-control" value="<?= $row['surname_ct'] ?>" readonly />
+                                <input type="text" name="surname_ct" class="form-control" value="<?= $row['surname_ct'] ?>" />
                             </div>
                             <div class="col-md-6">
                                 <label class="form-label">ชื่อผู้ใช้ :</label>
-                                <input type="text" name="username_ct" class="form-control" value="<?= $row['username_ct'] ?>" readonly />
+                                <input type="text" name="username_ct" class="form-control" value="<?= $row['username_ct'] ?>" readonly/>
                             </div>
                             <div class="col-md-6">
                                 <label class="form-label">รหัสผ่าน :</label>
-                                <input type="password" name="password_ct" class="form-control" value="<?= $row['password_ct'] ?>" readonly />
+                                <input type="password" name="password_ct" class="form-control" value="<?= $row['password_ct'] ?>" />
                             </div>
                             <div class="col-md-4">
                                 <label class="form-label">เบอร์โทรศัพท์:</label>
-                                <input type="text" name="phone_ct" class="form-control" value="<?= $row['phone_ct'] ?>" readonly />
+                                <input type="text" name="phone_ct" class="form-control" value="<?= $row['phone_ct'] ?>" />
                             </div>
                             <div class="col-md-8">
                                 <label class="form-label">อีเมล:</label>
-                                <input type="text" name="email_ct" class="form-control" value="<?= $row['email_ct'] ?>" readonly />
+                                <input type="text" name="email_ct" class="form-control" value="<?= $row['email_ct'] ?>" />
                             </div>
                             <div class="col-12">
                                 <label class="form-label">ที่อยู่:</label>
-                                <input type="text" name="adress_ct" class="form-control" value="<?= $row['adress_ct'] ?>" readonly />
+                                <input type="text" name="adress_ct" class="form-control" value="<?= $row['adress_ct'] ?>" />
                             </div>
                             <div class="mb-3">
-                                <button type="submit" name="edit" class="btn btn-primary">แก้ไขข้อมูล</button>
+                                <button type="submit" name="editpf_cus" class="btn btn-primary">แก้ไขข้อมูล</button>
                                 <a href="index_customer.php" class="btn btn-danger">ยกเลิก</a>
                             </div>
                         </form>

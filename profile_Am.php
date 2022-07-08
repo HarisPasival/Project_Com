@@ -32,34 +32,40 @@ if (!isset($_SESSION['is_login'])) {
             </p>
         </div>
         <div class="row">
+            <?php if (isset($_SESSION['message'])) : ?>
+                <h5 class="alert alert-success"><?= $_SESSION['message']; ?></h5>
+            <?php
+                unset($_SESSION['message']);
+            endif;
+            ?>
             <div class="col mt-4">
                 <div class="card border-0">
                     <div class="card-body">
-                        <form action="#" method="POST" class="row g-3">
+                        <form action="editpf_Am.php" method="POST" class="row g-3">
                             <input type="hidden" name="owner_id" value="<?= $row['owner_id'] ?>">
                             <div class="col-md-6">
                                 <label class="form-label">ชื่อ :</label>
-                                <input type="text" name="name_owner" class="form-control" value="<?= $row['name_owner'] ?>" readonly />
+                                <input type="text" name="name_owner" class="form-control" value="<?= $row['name_owner'] ?>" />
                             </div>
                             <div class="col-md-6">
                                 <label class="form-label">นามสกุล :</label>
-                                <input type="text" name="surname_owner" class="form-control" value="<?= $row['surname_owner'] ?>" readonly />
+                                <input type="text" name="surname_owner" class="form-control" value="<?= $row['surname_owner'] ?>" />
                             </div>
                             <div class="col-md-6">
                                 <label class="form-label">ชื่อผู้ใช้ :</label>
-                                <input type="text" name="username_owner" class="form-control" value="<?= $row['username_owner'] ?>" readonly />
+                                <input type="text" name="username_owner" class="form-control" value="<?= $row['username_owner'] ?>" />
                             </div>
                             <div class="col-md-6">
                                 <label class="form-label">รหัสผ่าน :</label>
-                                <input type="password" name="password_owner" class="form-control" value="<?= $row['password_owner'] ?>" readonly />
+                                <input type="password" name="password_owner" class="form-control" value="<?= $row['password_owner'] ?>" />
                             </div>
                             <div class="col-md-4">
                                 <label class="form-label">เบอร์โทรศัพท์:</label>
-                                <input type="text" name="phone_owner" class="form-control" value="<?= $row['phone_owner'] ?>" readonly />
+                                <input type="text" name="phone_owner" class="form-control" value="<?= $row['phone_owner'] ?>" />
                             </div>
                             <div class="col-md-8">
                                 <label class="form-label">อีเมล:</label>
-                                <input type="text" name="email_owner" class="form-control" value="<?= $row['email_owner'] ?>" readonly />
+                                <input type="text" name="email_owner" class="form-control" value="<?= $row['email_owner'] ?>" />
                             </div>
                             <div class="mb-3">
                                 <button type="submit" name="edit_Am" class="btn btn-primary">แก้ไขข้อมูล</button>

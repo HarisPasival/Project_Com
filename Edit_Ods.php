@@ -19,7 +19,7 @@ include('config/conn.php');
             <div class="col mt-4">
                 <div class="card">
                     <div class="card-body">
-                        <h3>เพิ่มข้อมูลลูกค้า
+                        <h3>แก้ไขข้อมูลการสั่งซื้อ
                         </h3>
                     </div>
                     <div class="card-body">
@@ -53,7 +53,7 @@ include('config/conn.php');
                                 <input type="date" name="order_date" class="form-control" value="<?= $result['order_date'] ?>" />
                             </div>
                             <div class="mb-3">
-                                <button type="submit" name="edit_odr" class="btn btn-primary">เพิ่มข้อมูล</button>
+                                <button type="submit" name="edit_odr" class="btn btn-primary">แก้ไขข้อมูล</button>
                                 <a href="orders_data.php" class="btn btn-danger">ย้อนกลับ</a>
                             </div>
                         </form>

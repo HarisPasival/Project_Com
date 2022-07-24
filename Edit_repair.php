@@ -60,16 +60,15 @@ include('config/conn.php');
                             </div>
                             <div class="form-group">
                                 <label class="form-label">สถานะการซ่อม :</label>&nbsp;
-                                <input type="radio" class="form-check-input" name="repair_status" id="รอดำเนินการ" value="รอดำเนินการ" <?= ($result['repair_status'] == 'รอดำเนินการ') ? "checked" : ""; ?>>
+                                <input type="radio" class="form-check-input" name="repair_status" id="1" value="รอดำเนินการ" <?= ($result['repair_status'] == 'รอดำเนินการ') ? "checked" : ""; ?>>
                                 <label for="รอดำเนินการ" class="form-input-label">รอดำเนินการ</label>
-                                <input type="radio" class="form-check-input" name="repair_status" id="รับซ่อมแล้ว" value="รับซ่อมแล้ว" <?= ($result['repair_status'] == 'รับซ่อมแล้ว') ? "checked" : ""; ?>>
+                                <input type="radio" class="form-check-input" name="repair_status" id="2" value="รับซ่อมแล้ว" <?= ($result['repair_status'] == 'รับซ่อมแล้ว') ? "checked" : ""; ?>>
                                 <label for="รับซ่อมแล้ว" class="form-input-label">รับซ่อมแล้ว</label>
-                                <input type="radio" class="form-check-input" name="repair_status" id="ซ่อมเสร็จแล้ว" value="ซ่อมเสร็จแล้ว" <?= ($result['repair_status'] == 'ซ่อมเสร็จแล้ว') ? "checked" : ""; ?>>
+                                <input type="radio" class="form-check-input" name="repair_status" id="3" value="ซ่อมเสร็จแล้ว" <?= ($result['repair_status'] == 'ซ่อมเสร็จแล้ว') ? "checked" : ""; ?>>
                                 <label for="ซ่อมเสร็จแล้ว" class="form-input-label">ซ่อมเสร็จแล้ว</label>
-
                             </div>
                             <div class="mb-3">
-                                <button type="submit" name="edit_repair" class="btn btn-primary">เพิ่มรายการซ่อม</button>
+                                <button type="submit" name="edit_repair" class="btn btn-primary">แก้ไขรายการซ่อม</button>
                                 <a href="repair.php" class="btn btn-danger">ยกเลิก</a>
                             </div>
                         </form>

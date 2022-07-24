@@ -25,15 +25,20 @@ session_start();
                 <div class="card border-0">
                     <div class="card-body">
                         <form action="crud.php" method="POST" class="row g-3">
-                            <div class="col-md-2">
-                                <label class="form-label">คำนำหน้า :</label>
-                                <input type="text" name="title_ct" class="form-control" />
+                            <div class="form-group">
+                                <label class="form-label">คำนำหน้า :</label>&nbsp;
+                                <input type="radio" class="form-check-input" name="title_ct" id="1" value="1">
+                                <label for="นาย" class="form-input-label">นาย</label>
+                                <input type="radio" class="form-check-input" name="title_ct" id="2" value="2">
+                                <label for="นาง" class="form-input-label">นาง</label>
+                                <input type="radio" class="form-check-input" name="title_ct" id="3" value="3">
+                                <label for="อื่นๆ" class="form-input-label">อื่นๆ</label>
                             </div>
-                            <div class="col-md-5">
+                            <div class="col-md-6">
                                 <label class="form-label">ชื่อ :</label>
                                 <input type="text" name="name_ct" class="form-control" />
                             </div>
-                            <div class="col-md-5">
+                            <div class="col-md-6">
                                 <label class="form-label">นามสกุล :</label>
                                 <input type="text" name="surname_ct" class="form-control" />
                             </div>

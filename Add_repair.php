@@ -48,13 +48,13 @@ session_start();
                             <div class="form-group">
                                 <label class="form-label">สถานะการซ่อม :</label>&nbsp;
                                 <input type="radio" class="form-check-input" name="repair_status"
-                                id="รอดำเนินการ" value="รอดำเนินการ">
+                                id="1" value="รอดำเนินการ">
                                 <label for="รอดำเนินการ" class="form-input-label">รอดำเนินการ</label>
                                 <input type="radio" class="form-check-input" name="repair_status"
-                                id="รับซ่อมแล้ว" value="รับซ่อมแล้ว">
+                                id="2" value="รับซ่อมแล้ว">
                                 <label for="รับซ่อมแล้ว" class="form-input-label">รับซ่อมแล้ว</label>
                                 <input type="radio" class="form-check-input" name="repair_status"
-                                id="ซ่อมเสร็จแล้ว" value="ซ่อมเสร็จแล้ว">
+                                id="3" value="ซ่อมเสร็จแล้ว">
                                 <label for="ซ่อมเสร็จแล้ว" class="form-input-label">ซ่อมเสร็จแล้ว</label>
                                 
                             </div>

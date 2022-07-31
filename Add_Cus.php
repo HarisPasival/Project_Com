@@ -27,11 +27,11 @@ session_start();
                         <form action="crud.php" method="POST" class="row g-3">
                             <div class="form-group">
                                 <label class="form-label">คำนำหน้า :</label>&nbsp;
-                                <input type="radio" class="form-check-input" name="title_ct" id="1" value="1">
+                                <input type="radio" class="form-check-input" name="title_ct" id="1" value="นาย">
                                 <label for="นาย" class="form-input-label">นาย</label>
-                                <input type="radio" class="form-check-input" name="title_ct" id="2" value="2">
+                                <input type="radio" class="form-check-input" name="title_ct" id="2" value="นาง">
                                 <label for="นาง" class="form-input-label">นาง</label>
-                                <input type="radio" class="form-check-input" name="title_ct" id="3" value="3">
+                                <input type="radio" class="form-check-input" name="title_ct" id="3" value="อื่นๆ">
                                 <label for="อื่นๆ" class="form-input-label">อื่นๆ</label>
                             </div>
                             <div class="col-md-6">

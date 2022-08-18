@@ -9,8 +9,9 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- <script src="https://kit.fontawesome.com/79a0376aeb.js" crossorigin="anonymous"></script>  -->
     <title>ข้อมูลลูกค้า</title>
-    <?php include 'navbar/head.php' ?>
+    <?php include 'navbar/head.php'?>
 </head>
 
 <body>
@@ -26,7 +27,7 @@ session_start();
                 <div class="card">
                     <div class="card-body">
                         <h3>ข้อมูลลูกค้า
-                            <a href="Add_Cus.php" class="btn btn-primary">+เพิ่มข้อมูล</a>
+                            <a href="Add_Cus.php" class="btn btn-success"><i class="fa-solid fa-circle-plus"></i> เพิ่มข้อมูล</a>
                         </h3>
                     </div>
                     <div class="card-body">
@@ -39,8 +40,7 @@ session_start();
                                     <th>เบอร์โทร</th>
                                     <th>อีเมล</th>
                                     <th>ที่อยู่</th>
-                                    <th>แก้ไข</th>
-                                    <th>ลบ</th>
+                                    <th>จัดการ</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -53,14 +53,15 @@ session_start();
                                 ?>
                                     <tr>
                                         <td><?= $i++; ?></td>
-                                        <td><?= $row['title_ct'].$row['name_ct'].' '.$row['surname_ct']; ?></td>
+                                        <td><?= $row['title_ct'] . $row['name_ct'] . ' ' . $row['surname_ct']; ?></td>
                                         <td><?= $row['phone_ct']; ?></td>
                                         <td><?= $row['email_ct']; ?></td>
                                         <td><?= $row['adress_ct']; ?></td>
-                                        <td><a href="Edit_Cus.php?customer_id=<?= $row['customer_id'] ?>" class="btn btn-warning">แก้ไข</a></td>
                                         <td>
                                             <form action="crud.php" method="POST">
-                                                <button type="submit" name="delete_cus" value="<?= $row['customer_id'] ?>" onclick="return confirm('คุณต้องการลบหรือไม่');" class="btn btn-danger">ลบ</button>
+                                                <a href="#" class="btn btn-primary"><i class="fa-solid fa-eye"></i></a>
+                                                <a href="Edit_Cus.php?customer_id=<?= $row['customer_id'] ?>" class="btn btn-warning"><i class="fa-solid fa-square-pen"></i></a>
+                                                <button type="submit" name="delete_cus" value="<?= $row['customer_id'] ?>" onclick="return confirm('คุณต้องการลบหรือไม่');" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
                                             </form>
                                         </td>
                                     </tr>

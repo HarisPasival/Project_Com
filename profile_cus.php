@@ -20,6 +20,7 @@ if (!isset($_SESSION['is_login'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <?php include 'navbar/nav_cus.php' ?>
     <title>ข้อมูลส่วนตัว</title>
 </head>
 

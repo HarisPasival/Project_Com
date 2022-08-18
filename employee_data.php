@@ -9,6 +9,7 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/79a0376aeb.js" crossorigin="anonymous"></script>
     <title>ข้อมูลพนักงาน</title>
     <?php include 'navbar/head.php' ?>
 </head>
@@ -26,7 +27,7 @@ session_start();
                 <div class="card">
                     <div class="card-body">
                         <h3>ข้อมูลพนักงาน
-                            <a href="Add_emp.php" class="btn btn-success">+เพิ่มข้อมูล</a>
+                            <a href="Add_emp.php" class="btn btn-success"><i class="fa-solid fa-circle-plus"></i> เพิ่มข้อมูล</a>
                         </h3>
                     </div>
                     <div class="card-body">
@@ -39,7 +40,7 @@ session_start();
                                     <th>เบอร์โทร</th>
                                     <th>อีเมล</th>
                                     <th>ที่อยู่</th>
-                                    <th width="20%">จัดการ</th>
+                                    <th>จัดการ</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -58,9 +59,9 @@ session_start();
                                         <td><?= $row['adress_emp']; ?></td>
                                         <td>
                                             <form action="crud.php" method="POST">
-                                                <a href="#" class="btn btn-primary">ดูรายละเอียด</a>
-                                                <a href="Edit_emp.php?employee_id=<?= $row['employee_id'] ?>" class="btn btn-warning">แก้ไข</a>
-                                                <button type="submit" name="delete_emp" value="<?= $row['employee_id'] ?>" onclick="return confirm('คุณต้องการลบหรือไม่');" class="btn btn-danger">ลบ</button>
+                                                <a href="#" class="btn btn-primary"><i class="fa-solid fa-eye"></i></a>
+                                                <a href="Edit_emp.php?employee_id=<?= $row['employee_id'] ?>" class="btn btn-warning"><i class="fa-solid fa-square-pen"></i></a>
+                                                <button type="submit" name="delete_emp" value="<?= $row['employee_id'] ?>" onclick="return confirm('คุณต้องการลบหรือไม่');" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
                                             </form>
                                         </td>
                                     </tr>

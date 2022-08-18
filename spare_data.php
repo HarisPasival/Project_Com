@@ -10,7 +10,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <title>ข้อมูลอะไหล่</title>
-    <?php include 'navbar/head.php'?>
+    <?php include 'navbar/head.php' ?>
 </head>
 
 <body>
@@ -27,11 +27,11 @@ session_start();
                     <div class="card-body">
                         <h3>
                             ข้อมูลอะไหล่ในสต็อก
-                            <a href="Add_spare.php" class="btn btn-primary">+เพิ่มข้อมูล</a>
+                            <a href="Add_spare.php" class="btn btn-success"><i class="fa-solid fa-circle-plus"></i> เพิ่มข้อมูล</a>
                         </h3>
                     </div>
                     <div class="card-body">
-                    <?php include 'datatable/DataTable.php';?>
+                        <?php include 'datatable/DataTable.php'; ?>
                         <table id="example" class="table table-borderless table-hover">
                             <thead class="table-primary">
                                 <tr>
@@ -39,8 +39,7 @@ session_start();
                                     <th>ชื่ออะไหล่</th>
                                     <th>จำนวน</th>
                                     <th>ราคา</th>
-                                    <th>แก้ไข</th>
-                                    <th>ลบ</th>
+                                    <th>จัดการ</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -56,10 +55,11 @@ session_start();
                                         <td><?= $row['spare_name']; ?></td>
                                         <td><?= $row['spare_quanlity']; ?></td>
                                         <td><?= $row['spare_cost']; ?></td>
-                                        <td><a href="Edit_spare.php?spare_id=<?= $row['spare_id'] ?>" class="btn btn-warning">แก้ไข</a></td>
                                         <td>
                                             <form action="crud.php" method="POST">
-                                                <button type="submit" name="delete_spare" value="<?= $row['spare_id'] ?>" onclick="return confirm('คุณต้องการลบหรือไม่');" class="btn btn-danger">ลบ</button>
+                                                <a href="#" class="btn btn-primary"><i class="fa-solid fa-eye"></i></a>
+                                                <a href="Edit_spare.php?spare_id=<?= $row['spare_id'] ?>" class="btn btn-warning"><i class="fa-solid fa-square-pen"></i></a>
+                                                <button type="submit" name="delete_spare" value="<?= $row['spare_id'] ?>" onclick="return confirm('คุณต้องการลบหรือไม่');" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
                                             </form>
                                         </td>
                                     </tr>

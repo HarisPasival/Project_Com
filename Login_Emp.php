@@ -37,11 +37,11 @@
                         <form action="login_Emp_db.php" method="POST">
                             <div class="col-12 mt-2">
                                 <label class="form-label">ชื่อผู้ใช้ :</label>
-                                <input type="text" name="username_emp" class="form-control" />
+                                <input type="text" name="username_emp" class="form-control" value="Emp1"/>
                             </div>
                             <div class="col-12 mt-2">
                                 <label class="form-label">รหัสผ่าน :</label>
-                                <input type="password" name="password_emp" class="form-control" />
+                                <input type="password" name="password_emp" class="form-control" value="123"/>
                             </div>
                             <div class="text-center">
                                 <button type="submit" name="login_Emp" class="btn btn-primary btn-block my-3">เข้าสู่ระบบ</button><br>

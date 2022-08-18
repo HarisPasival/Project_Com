@@ -26,7 +26,7 @@ session_start();
                 <div class="card">
                     <div class="card-body">
                         <h3>ตารางรุ่นฝาสูบ
-                            <a href="Add_model.php" class="btn btn-primary">+เพิ่มข้อมูล</a>
+                            <a href="Add_model.php" class="btn btn-success"><i class="fa-solid fa-circle-plus"></i> เพิ่มข้อมูล</a>
                         </h3>
                     </div>
                     <div class="card-body">
@@ -36,8 +36,7 @@ session_start();
                                 <tr>
                                     <th>#</th>
                                     <th>ชื่อรุ่นฝาสูบ</th>
-                                    <th>แก้ไข</th>
-                                    <th>ลบ</th>
+                                    <th>จัดการ</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -51,10 +50,10 @@ session_start();
                                     <tr>
                                         <td><?= $i++; ?></td>
                                         <td><?= $row['model_name']; ?></td>
-                                        <td><a href="Edit_model.php?model_id=<?= $row['model_id'] ?>" class="btn btn-warning">แก้ไข</a></td>
                                         <td>
                                             <form action="crud.php" method="POST">
-                                                <button type="submit" name="delete_model" value="<?= $row['model_id'] ?>" onclick="return confirm('คุณต้องการลบหรือไม่');" class="btn btn-danger">ลบ</button>
+                                            <a href="Edit_model.php?model_id=<?= $row['model_id'] ?>" class="btn btn-warning"><i class="fa-solid fa-square-pen"></i></a>
+                                                <button type="submit" name="delete_model" value="<?= $row['model_id'] ?>" onclick="return confirm('คุณต้องการลบหรือไม่');" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
                                             </form>
                                         </td>
                                     </tr>

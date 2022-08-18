@@ -12,7 +12,7 @@
 <body>
     <div class="container mt-5">
         <div class="row">
-            <div class="card text-center">
+            <div class="card text-center shadow">
                 <div class="card-body">
                 </div>
                 <div class="card-body">

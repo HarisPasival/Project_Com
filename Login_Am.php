@@ -9,6 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/79a0376aeb.js" crossorigin="anonymous"></script> 
     <title>หน้าล็อกอิน</title>
 </head>
 
@@ -37,11 +38,13 @@
                         <form action="login_Am_db.php" method="POST">
                             <div class="col-12 mt-2">
                                 <label class="form-label">ชื่อผู้ใช้ :</label>
-                                <input type="text" name="username_owner" class="form-control" />
+                                <!-- test -->
+                                <input type="text" name="username_owner" class="form-control" value="Admin"/> 
                             </div>
                             <div class="col-12 mt-2">
                                 <label class="form-label">รหัสผ่าน :</label>
-                                <input type="password" name="password_owner" class="form-control" />
+                                <!-- test -->
+                                <input type="password" name="password_owner" class="form-control" value="123" />
                             </div>
                             <div class="text-center">
                                 <button type="submit" name="login_Am" class="btn btn-primary btn-block my-3">เข้าสู่ระบบ</button><br>

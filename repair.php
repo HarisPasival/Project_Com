@@ -18,11 +18,12 @@ session_start();
 <body>
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
         <!-- Navbar Brand-->
-        <a class="navbar-brand ps-3" href="index.html">Start Bootstrap</a>
+        <a class="navbar-brand ps-3" href="index.html">ก้าวหน้าฝาสูบ</a>
         <!-- Sidebar Toggle-->
         <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
         <!-- Navbar Search-->
         <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+            
         </form>
         <!-- Navbar-->
         <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
@@ -108,63 +109,61 @@ session_start();
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid px-4">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-12 mt-4">
-                                <?php if (isset($_SESSION['message'])) : ?>
-                                    <h5 class="alert alert-success"><?= $_SESSION['message']; ?></h5>
-                                <?php
-                                    unset($_SESSION['message']);
-                                endif;
-                                ?>
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h3>รายการรับซ่อมฝาสูบ
-                                            <a href="Add_repair.php" class="btn btn-success"><i class="fa-solid fa-circle-plus"></i> เพิ่มรายการซ่อม</a>
-                                        </h3>
-                                    </div>
-                                    <div class="card-body">
-                                        <?php include 'datatable/DataTable.php'; ?>
-                                        <table id="example" class="table table-borderless table-hover">
-                                            <thead class="table-primary">
+                    <div class="row">
+                        <div class="col-md-12 mt-4">
+                            <?php if (isset($_SESSION['message'])) : ?>
+                                <h5 class="alert alert-success"><?= $_SESSION['message']; ?></h5>
+                            <?php
+                                unset($_SESSION['message']);
+                            endif;
+                            ?>
+                            <div class="card">
+                                <div class="card-body">
+                                    <h3>รายการรับซ่อมฝาสูบ
+                                        <a href="Add_repair.php" class="btn btn-success"><i class="fa-solid fa-circle-plus"></i> เพิ่มรายการซ่อม</a>
+                                    </h3>
+                                </div>
+                                <div class="card-body">
+                                    <?php include 'datatable/DataTable.php'; ?>
+                                    <table id="example" class="table table-borderless table-hover">
+                                        <thead class="table-primary">
+                                            <tr>
+                                                <th>#</th>
+                                                <th>วันที่ซ่อม</th>
+                                                <th>ชื่อผู้ใช้บริการ</th>
+                                                <th>รายละเอียดการซ่อม</th>
+                                                <th>ค่าใช้จ่ายในการซ่อม</th>
+                                                <th>ค่าซ่อม</th>
+                                                <th>สถานะการซ่อม</th>
+                                                <th>จัดการ</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
+                                            $i = 1;
+                                            require 'config/conn.php';
+                                            $sql = "SELECT * FROM repair";
+                                            $stmt = $conn->query($sql);
+                                            while ($row = $stmt->fetch()) {
+                                            ?>
                                                 <tr>
-                                                    <th>#</th>
-                                                    <th>วันที่ซ่อม</th>
-                                                    <th>ชื่อผู้ใช้บริการ</th>
-                                                    <th>รายละเอียดการซ่อม</th>
-                                                    <th>ค่าใช้จ่ายในการซ่อม</th>
-                                                    <th>ค่าซ่อม</th>
-                                                    <th>สถานะการซ่อม</th>
-                                                    <th>จัดการ</th>
+                                                    <td><?= $i++; ?></td>
+                                                    <td><?= $row['repair_date']; ?></td>
+                                                    <td><?= $row['repair_name']; ?></td>
+                                                    <td><?= $row['repair_details']; ?></td>
+                                                    <td><?= $row['repair_cal']; ?></td>
+                                                    <td><?= $row['repair_price']; ?></td>
+                                                    <td><?= $row['repair_status']; ?></td>
+                                                    <td>
+                                                        <form action="repair_crud.php" method="POST">
+                                                            <a href="Edit_repair.php?repair_id=<?= $row['repair_id'] ?>" class="btn btn-warning"><i class="fa-solid fa-square-pen"></i></a>
+                                                            <button type="submit" name="delete_repair" value="<?= $row['repair_id'] ?>" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
+                                                        </form>
+                                                    </td>
                                                 </tr>
-                                            </thead>
-                                            <tbody>
-                                                <?php
-                                                $i = 1;
-                                                require 'config/conn.php';
-                                                $sql = "SELECT * FROM repair";
-                                                $stmt = $conn->query($sql);
-                                                while ($row = $stmt->fetch()) {
-                                                ?>
-                                                    <tr>
-                                                        <td><?= $i++; ?></td>
-                                                        <td><?= $row['repair_date']; ?></td>
-                                                        <td><?= $row['repair_name']; ?></td>
-                                                        <td><?= $row['repair_details']; ?></td>
-                                                        <td><?= $row['repair_cal']; ?></td>
-                                                        <td><?= $row['repair_price']; ?></td>
-                                                        <td><?= $row['repair_status']; ?></td>
-                                                        <td>
-                                                            <form action="repair_crud.php" method="POST">
-                                                                <a href="Edit_repair.php?repair_id=<?= $row['repair_id'] ?>" class="btn btn-warning"><i class="fa-solid fa-square-pen"></i></a>
-                                                                <button type="submit" name="delete_repair" value="<?= $row['repair_id'] ?>" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
-                                                            </form>
-                                                        </td>
-                                                    </tr>
-                                                <?php } ?>
-                                            </tbody>
-                                        </table>
-                                    </div>
+                                            <?php } ?>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>

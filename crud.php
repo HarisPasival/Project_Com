@@ -1,3 +1,5 @@
+<script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <?php
 session_start();
 include('config/conn.php');
@@ -29,8 +31,19 @@ if (isset($_POST['save_cus'])) {
     $query_execute = $query_run->execute($data);
 
     if ($query_execute) {
-        $_SESSION['message'] = "เพิ่มข้อมูลสำเร็จ";
-        header('Location: customer_data.php');
+        // $_SESSION['message'] = "เพิ่มข้อมูลสำเร็จ";
+        echo "<script>
+            $(document).ready(function(){
+                Swal.fire({
+                    title: 'success',
+                    text: 'เพิ่มข้อมูลสำเร็จ',
+                    icon: 'success',
+                    timer : 1500,
+                    showConfirmButton: false
+                });
+            });
+        </script>";
+        header('refresh:1; url = customer_data.php');
         exit(0);
     } else {
         $_SESSION['message'] = "เพิ่มข้อมูลไม่สำเร็จ";
@@ -68,9 +81,20 @@ if (isset($_POST['edit_cus'])) {
         ];
         $query_execute = $stmt->execute($data);
         if ($query_execute) {
-            $_SESSION['message'] = "แก้ไขข้อมูลสำเร็จ";
-            header('Location: customer_data.php');
-            exit(0);
+            // $_SESSION['message'] = "แก้ไขข้อมูลสำเร็จ";
+            echo "<script>
+            $(document).ready(function(){
+                Swal.fire({
+                    title: 'success',
+                    text: 'แก้ไขข้อมูลสำเร็จ',
+                    icon: 'success',
+                    timer : 1000,
+                    showConfirmButton: false
+                });
+            });
+        </script>";
+        header('refresh:1; url = customer_data.php');
+        exit(0);
         } else {
             $_SESSION['message'] = "แก้ไขข้อมูลไม่สำเร็จ";
             header('Location: customer_data.php');
@@ -199,13 +223,13 @@ if (isset($_POST['save_emp'])) {
     $phone_emp = $_POST['phone_emp'];
     $email_emp = $_POST['email_emp'];
     $adress_emp = $_POST['adress_emp'];
-    
+
     $password_emp = password_hash($password_emp, PASSWORD_DEFAULT);
     $query = "INSERT INTO employee(title_emp,name_emp,surname_emp,username_emp,password_emp, phone_emp,email_emp,adress_emp) VALUES(:title_emp,:name_emp,:surname_emp,:username_emp,:password_emp,:phone_emp,:email_emp,:adress_emp)";
     $query_run = $conn->prepare($query);
 
     $data = [
-        ':title_emp'=> $title_emp,
+        ':title_emp' => $title_emp,
         ':name_emp' => $name_emp,
         ':surname_emp' => $surname_emp,
         ':username_emp' => $username_emp,
